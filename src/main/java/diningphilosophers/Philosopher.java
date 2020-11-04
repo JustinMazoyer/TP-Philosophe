@@ -38,7 +38,7 @@ public class Philosopher
         }
     }
 
-    // Permet d'interrompre le philosophe "proprement" :
+        // Permet d'interrompre le philosophe "proprement" :
     // Il doit relâcher ses baguettes avant de s'arrêter
     public void leaveTable() {
         running = false;
