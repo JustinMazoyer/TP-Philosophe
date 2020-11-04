@@ -12,6 +12,19 @@ public class ChopStick {
         // Chaque baguette est numérotée 
         myNumber = ++stickCount;
     }
+    synchronized public void take() throws InterruptedException {
+        while (!iAmFree) {
+            wait();
+        }
+        iAmFree = false;
+        System.out.println("La baguette " + myNumber + " a été prise");
+       
+    }
+     synchronized public void release() {
+        System.out.println("La baguette " + myNumber + " a été rendu");
+        iAmFree = true;
+        notifyAll(); 
+    }
 
     // ...
     
